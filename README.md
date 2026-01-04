@@ -1,1 +1,189 @@
-# ECO3-legacy-reporting-environment-analysis
+# ECO3 – Legacy Reporting Environment Analysis
+
+## Purpose of This Repository
+
+This repository documents the **initial discovery, analysis, and understanding** of the legacy reporting and data environment at ECO3.
+
+Before attempting any fixes, automation, or future-state architecture design, it was critical to **first understand the reality of the existing ecosystem**—its scale, dependencies, risks, and business usage.
+
+This repository focuses on **understanding before action**.
+
+All descriptions are conceptual and use dummy representations to respect confidentiality.
+
+---
+
+## Role Context
+
+I joined ECO3 as a **Business Data Analyst** in June 2025.
+
+At the time of joining:
+- There was **no formal onboarding**
+- No documentation of the reporting or data environment
+- No clear ownership of reports or databases
+- Knowledge existed only in fragmented, informal forms
+
+To make any meaningful improvement, I independently investigated and mapped the entire landscape.
+
+---
+
+## Legacy Environment – Scale & Complexity
+
+Through my own analysis, I identified a highly fragmented ecosystem consisting of:
+
+- **350+ reports**
+- **90+ Microsoft Access databases**
+- **200+ Excel delta and transformation files**
+- Core data sources from **SAP BW (BP1 & BP2)**
+
+This environment had evolved organically over many years without architectural oversight or governance.
+
+---
+
+## Typical Data Flow Patterns
+
+A common end-to-end data flow looked like:
+
+SAP
+↓
+SAP BW (BP1 / BP2)
+↓
+Excel Extracts
+↓
+Microsoft Access Databases
+↓
+Excel Transformation Files
+↓
+Power BI Reports
+
+---
+
+Each additional hop increased:
+- Fragility
+- Latency
+- Debugging complexity
+- Risk of silent data errors
+
+---
+
+## Key Problems Identified
+
+### 1. No Documentation or Ownership
+- No central explanation of how reports were built
+- No clear owners for databases or files
+- High dependency on individual knowledge
+
+---
+
+### 2. Long and Fragile Dependency Chains
+- One Access or Excel file often fed multiple downstream reports
+- A small upstream change could break multiple business-critical outputs
+
+---
+
+### 3. Inconsistent Business Logic
+- Same KPIs calculated differently across reports
+- No single source of truth for definitions
+- Difficulty reconciling numbers across teams
+
+---
+
+### 4. Technology Fragility
+- Heavy reliance on Excel macros
+- Complex, opaque Access queries
+- Manual steps embedded in critical processes
+- High risk of human error
+
+---
+
+### 5. High Change Risk
+- Business group changes
+- Upcoming organizational carve-outs
+- Structural SAP BW changes
+
+Even small modifications required careful reconciliation to avoid breaking reporting.
+
+---
+
+## Understanding Real Business Usage
+
+Not all reports were equally important.
+
+Through direct discussions and later structured surveys, I focused on identifying:
+- Reports actively used by decision-makers
+- Stakeholder-facing outputs
+- Reports supporting financial, pricing, and operational decisions
+
+This distinction between **critical vs legacy-unused reports** was essential for prioritization.
+
+---
+
+## Why Analysis Came Before Fixing
+
+It was intentionally decided **not to immediately “fix” things**.
+
+Without understanding:
+- Data lineage
+- Business usage
+- Technical dependencies
+- Risk exposure
+
+Any quick changes could have caused downstream failures.
+
+This phase created a **shared mental model** of the environment and formed the foundation for:
+- Stabilization work
+- Report rebuilding
+- Automation initiatives
+- BDM 2.0 future architecture
+
+---
+
+## Outputs of This Phase
+
+By completing this analysis phase, I achieved the following:
+
+- Mapped major end-to-end data flows
+- Identified high-risk dependency chains
+- Understood business-critical reporting
+- Established a factual baseline for decision-making
+- Enabled informed prioritization and transformation planning
+
+All subsequent work at ECO3 builds directly on this understanding.
+
+---
+
+## How This Repository Fits in the Bigger Journey
+
+This repository represents **Phase 1** of a broader transformation:
+
+- **Phase 1:** Legacy environment analysis (this repo)
+- **Phase 2:** Operational Power BI ownership
+- **Phase 3:** Data engineering & automation
+- **Phase 4:** BDM 2.0 future architecture
+- **Phase 5:** Business analytics applications
+
+Each phase is documented separately to keep clarity and focus.
+
+---
+
+## Suggested Diagrams to Add (Optional – Later)
+
+If visuals are added later, they should remain **conceptual** and include:
+
+1. **Legacy Architecture Diagram**  
+   SAP → SAP BW → Excel → Access → Excel → Power BI
+
+2. **Dependency Risk Diagram**  
+   One database feeding multiple reports
+
+3. **Risk vs Criticality Matrix**  
+   Business importance vs technical fragility
+
+These diagrams help explain complexity without exposing data.
+
+---
+
+## Confidentiality Notice
+
+All explanations in this repository use **dummy data and simplified representations**.
+
+No proprietary ECO3 systems, logic, schemas, or data are disclosed.
