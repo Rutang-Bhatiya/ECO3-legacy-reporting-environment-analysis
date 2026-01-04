@@ -143,10 +143,11 @@ All subsequent work at ECO3 builds directly on this understanding.
 
 This repository represents **Phase 1** of a broader transformation:
 
-- **Phase 1:** Legacy environment analysis (this repo)
-- **Phase 2:** Operational Power BI ownership
-- **Phase 3:** Data engineering & automation
-- **Phase 4:** BDM 2.0 future architecture
+- **Phase 1:** [`ECO3-legacy-reporting-environment-analysis (this repo)`](https://rutang-bhatiya.github.io/ECO3-legacy-reporting-environment-analysis/)
+- **Phase 2:** [`ECO3-operational-BI-ownership`](https://rutang-bhatiya.github.io/ECO3-operational-BI-ownership/){:target="_blank"}
+- **Phase 3:** [`Pricing-Software-Service--Sales-analytics`](https://rutang-bhatiya.github.io/ECO3-Pricing-Software-Service--Sales-analytics/){:target="_blank"}
+- **Phase 4:** [`ECO3-data-engineering-BDM-2-future-architecture`](https://rutang-bhatiya.github.io/ECO3-data-engineering-BDM-2-future-architecture/){:target="_blank"}
+- **Phase 5:** [`ECO3-enterprise-analytics-journey`](https://rutang-bhatiya.github.io/ECO3-enterprise-analytics-journey/){:target="_blank"}
 
 Each phase is documented separately to keep clarity and focus.
 
