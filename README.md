@@ -1,10 +1,8 @@
-# ECO3 – Legacy Reporting Environment Analysis
-
 ## Purpose of This Repository
 
 This repository documents the **initial discovery, analysis, and understanding** of the legacy reporting and data environment at ECO3.
 
-Before attempting any fixes, automation, or future-state architecture design, it was critical to **first understand the reality of the existing ecosystem**—its scale, dependencies, risks, and business usage.
+Before attempting any fixes, automation, or future-state architecture design, it was critical to **first understand the reality of the existing ecosystem** its scale, dependencies, risks, and business usage.
 
 This repository focuses on **understanding before action**.
 
@@ -22,7 +20,7 @@ At the time of joining:
 - No clear ownership of reports or databases
 - Knowledge existed only in fragmented, informal forms
 
-To make any meaningful improvement, I independently investigated and mapped the entire landscape.
+To make any meaningful improvement, I investigated and mapped the entire landscape.
 
 ---
 
@@ -30,10 +28,10 @@ To make any meaningful improvement, I independently investigated and mapped the 
 
 Through my own analysis, I identified a highly fragmented ecosystem consisting of:
 
-- **350+ reports**
-- **90+ Microsoft Access databases**
-- **200+ Excel delta and transformation files**
-- Core data sources from **SAP BW (BP1 & BP2)**
+- **XXX reports**
+- **XXX Microsoft Access databases**
+- **XXX Excel delta and transformation files**
+- Core data sources from **SAP BW**
 
 This environment had evolved organically over many years without architectural oversight or governance.
 
@@ -43,17 +41,7 @@ This environment had evolved organically over many years without architectural o
 
 A common end-to-end data flow looked like:
 
-SAP
-↓
-SAP BW (BP1 / BP2)
-↓
-Excel Extracts
-↓
-Microsoft Access Databases
-↓
-Excel Transformation Files
-↓
-Power BI Reports
+SAP → SAP BW → Excel → Microsoft Access Databases → Excel reports
 
 ---
 
@@ -89,14 +77,14 @@ Each additional hop increased:
 
 ### 4. Technology Fragility
 - Heavy reliance on Excel macros
-- Complex, opaque Access queries
+- Complex, Access queries
 - Manual steps embedded in critical processes
 - High risk of human error
 
 ---
 
 ### 5. High Change Risk
-- Business group changes
+- Product mapping changes
 - Upcoming organizational carve-outs
 - Structural SAP BW changes
 
@@ -159,15 +147,12 @@ This repository represents **Phase 1** of a broader transformation:
 - **Phase 2:** Operational Power BI ownership
 - **Phase 3:** Data engineering & automation
 - **Phase 4:** BDM 2.0 future architecture
-- **Phase 5:** Business analytics applications
 
 Each phase is documented separately to keep clarity and focus.
 
 ---
 
 ## Suggested Diagrams to Add (Optional – Later)
-
-If visuals are added later, they should remain **conceptual** and include:
 
 1. **Legacy Architecture Diagram**  
    SAP → SAP BW → Excel → Access → Excel → Power BI
